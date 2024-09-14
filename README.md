@@ -1,7 +1,8 @@
 ### Country details finder
 
-vercel : https://search-96kmv0s05-om-prakash416s-projects.vercel.app/
-linkedin: https://www.linkedin.com/in/omprakash416/
+vercel : https://search-96kmv0s05-om-prakash416s-projects.vercel.app/ <br/>
+linkedin: https://www.linkedin.com/in/omprakash416/ <br/>
+<br/>
 This project is a Country Detail Finder App built with React and Fuse.js for fuzzy searching. It allows users to search for countries by name, capital, or currency and view detailed information about the selected country. The app includes an autocomplete feature for search suggestions.
 
 ## Features
