@@ -1,17 +1,18 @@
-.search-bar-container {
+/* .search-bar-container {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 10px;
 }
 
 .search-bar {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 2px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .autocomplete-suggestions {
@@ -23,6 +24,7 @@
   max-height: 200px;
   overflow-y: auto;
   z-index: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .suggestion-item {
@@ -35,7 +37,71 @@
 .suggestion-item:hover {
   background-color: #f0f0f0;
 }
+.country-details {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
 
-.suggestion-item strong {
+.country-details h2 {
+  margin: 0;
+  font-size: 24px;
   color: #333;
+}
+
+.country-details p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #666;
+}
+
+.country-details strong {
+  color: #333;
+} */
+
+/*dfghjkm*/
+/* SearchBar.css */
+.search-bar-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #007bff;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: #0056b3;
+}
+
+.autocomplete-suggestions {
+  position: absolute;
+  width: 100%;
+  /* background-color: white; */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
 }
