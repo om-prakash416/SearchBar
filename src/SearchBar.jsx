@@ -1,18 +1,22 @@
 
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-import Fuse from "fuse.js"; 
-import "./SearchBar.css"; 
-import countries from "./countries.json"; 
+import Fuse from "fuse.js";
+import "./SearchBar.css";
+import countries from "./countries.json";
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+
 const SearchBar = () => {
   const [query, setQuery] = useState("");
-  const [filteredCountries, setFilteredCountries] = useState([]); 
-  const [selectedCountry, setSelectedCountry] = useState(null); 
+  const [filteredCountries, setFilteredCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(null);
 
- 
   const fuse = new Fuse(countries, {
-    keys: ["country", "capital", "currency"], 
-    threshold: 0.3, 
+    keys: ["country", "capital", "currency"],
+    threshold: 0.3,
   });
 
   const handleInputChange = (e) => {
@@ -24,19 +28,14 @@ const SearchBar = () => {
       setFilteredCountries(results.map((result) => result.item));
     } else {
       setFilteredCountries([]);
-      setSelectedCountry(null); 
+      setSelectedCountry(null);
     }
   };
 
   const handleSuggestionClick = (country) => {
     setSelectedCountry(country);
     setFilteredCountries([]);
-    setQuery(country.country); 
-  };
-
-  
-  const handleBlur = () => {
-    setTimeout(() => setFilteredCountries([]), 200); 
+    setQuery(country.country);
   };
 
   return (
@@ -47,7 +46,6 @@ const SearchBar = () => {
         onChange={handleInputChange}
         placeholder="Search by country, capital, or currency..."
         className="search-bar"
-        onBlur={handleBlur} 
       />
       {filteredCountries.length > 0 && (
         <div className="autocomplete-suggestions">
@@ -64,24 +62,35 @@ const SearchBar = () => {
           ))}
         </div>
       )}
+
       {selectedCountry && (
-        <div className="country-details">
-          <h2>{selectedCountry.country}</h2>
-          <p>
-            <strong>Capital:</strong> {selectedCountry.capital}
-          </p>
-          <p>
-            <strong>Population:</strong>{" "}
-            {selectedCountry.population.toLocaleString()}
-          </p>
-          <p>
-            <strong>Official Language:</strong>{" "}
-            {selectedCountry.official_language}
-          </p>
-          <p>
-            <strong>Currency:</strong> {selectedCountry.currency}
-          </p>
-        </div>
+        <Box className="country-details-card" sx={{ minWidth: 275 }}>
+          <Card variant="outlined">
+            <CardContent className="card-2">
+              <Typography
+                className="country-1"
+                sx={{ fontSize: 30 }}
+                gutterBottom
+              >
+                <h5>{selectedCountry.country}</h5>
+              </Typography>
+              <Typography variant="p" component="div">
+                <strong>Capital:</strong> {selectedCountry.capital}
+              </Typography>
+              <Typography color="" variant="p">
+                <strong>Population:</strong>{" "}
+                {selectedCountry.population.toLocaleString()} <br />
+              </Typography>
+              <Typography variant="p">
+                <strong>Official Language:</strong>{" "}
+                {selectedCountry.official_language}
+              </Typography>
+              <Typography>
+                <strong>Currency:</strong> {selectedCountry.currency}
+              </Typography>
+            </CardContent>
+          </Card>
+        </Box>
       )}
     </div>
   );
