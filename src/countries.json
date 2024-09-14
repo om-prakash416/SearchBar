@@ -1,0 +1,24 @@
+
+[
+  {
+    "country": "United States",
+    "capital": "Washington, D.C.",
+    "population": 331002651,
+    "official_language": "English",
+    "currency": "United States Dollar"
+  },
+  {
+    "country": "India",
+    "capital": "New Delhi",
+    "population": 1380004385,
+    "official_language": "Hindi, English",
+    "currency": "Indian Rupee"
+  },
+  {
+    "country": "Canada",
+    "capital": "Ottawa",
+    "population": 37742154,
+    "official_language": "English, French",
+    "currency": "Canadian Dollar"
+  }
+]
